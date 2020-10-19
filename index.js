@@ -28,7 +28,7 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();
 
     if(command === 'help') {
-        message.channel.send('!help - Display commands\n!spam - \nDefinition: !spam "Your text between quotes" #Number of times to repeat @Specify a certain time in 24hr format\nUsage: !spam "Hello!" #5 @0954');
+        message.channel.send('!help - Display commands\n!spam  \n\t* Definition: !spam "Your text between quotes" #Number of times to repeat @Specify a certain time in 24hr format\n\t* Usage: !spam "Hello!" #5 @0954');
     } else if (command === 'spam') {
         client.commands.get('spam').execute(message, args);
     }

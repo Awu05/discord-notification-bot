@@ -36,10 +36,11 @@ module.exports = {
     }
 
     setTimeout(function () {
-      message.delete(message).catch(console.error);
       for (let i = 0; i < Number(numbCount); i++) {
         message.channel.send(text);
       }
     }, timeTillAction);
+
+    message.delete(message).catch(console.error);
   },
 };
