@@ -19,17 +19,18 @@ Requirements: NodeJS, Docker (Optional)
    };
    ```
 8. Replace KEY_GOES_HERE with the key you have just copied
-9. You can start the discord spam bot server by running ```javascript node . ``` in the terminal
+9. You can start the discord spam bot server by running ```node . ``` in the terminal
 10. Once the bot is up and running, you should see "Spam bot is online!" outputted to the terminal window
 
 ## **Optional steps to dockerize app**:
-1. Run ```javascript docker-compose up -d ``` and it should download all the necessary files, build the docker image for you and start it
-2. Docker image should be up and running now. You can check that it is running by typing ```javascript docker container ls``` into the terminal to see all active docker containers (or use the docker interface).
+1. Run ```docker-compose build``` and it should download all the necessary files and build the docker image for you
+2. Run ```docker-compose up -d ``` and it should start the docker image for you
+3. Docker image should be up and running now. You can check that it is running by typing ```javascript docker container ls``` into the terminal to see all active docker containers (or use the docker interface).
 
     
 
 ## **Commands**:
 * **!help** - Displays list of commands and their usage
-* **!spam** - 
+* **!spam** 
   * Definition: !spam "Insert message between quotes" #Number of times to repeat message @Specify the time to spam message in 24hr format
    * Usage: !spam "Hello" #5 @1000
