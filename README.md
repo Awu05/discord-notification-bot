@@ -33,4 +33,4 @@ Requirements: NodeJS, Docker (Optional)
 * **!help** - Displays list of commands and their usage
 * **!spam** 
   * Definition: !spam "Insert message between quotes" #Number of times to repeat message @Specify the time to spam message in 24hr format
-   * Usage: !spam "Hello" #5 @1000
+   * Usage: !spam "Hello" #5 @2020-10-19T18:55
