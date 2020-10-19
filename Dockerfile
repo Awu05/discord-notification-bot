@@ -1,10 +1,10 @@
-FROM node:12.16
+FROM node:12.16-alpine
 
-RUN yarn add discord.js 
+RUN apk add --no-cache curl
 
 COPY . .
 
-RUN yarn install
+RUN npm install
 
 CMD ["node", "index.js"]
 

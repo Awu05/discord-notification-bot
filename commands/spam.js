@@ -2,6 +2,8 @@ module.exports = {
   name: "spam",
   description: "This is the spam command!",
   execute(message, args) {
+    const dateFns = require("date-fns");
+    
     const messageConents = message.content;
 
     var numbCount = messageConents.substring(
@@ -19,19 +21,13 @@ module.exports = {
       messageConents.length
     );
 
-    var now = new Date();
-    var timeTillAction =
-      new Date(
-        now.getFullYear(),
-        now.getMonth(),
-        now.getDate(),
-        time.substring(0, 2),
-        time.substring(2, 4),
-        0,
-        0
-      ) - now;
+    const curTime = dateFns.format(new Date(dateFns.addHours(new Date(time), 4)), "yyyy-MM-dd'T'HH:mm");
+    const now = dateFns.format(new Date(), "yyyy-MM-dd'T'HH:mm");
 
-    console.log(`Time till called: ${timeTillAction}`);
+    var timeTillAction = dateFns.differenceInMilliseconds(
+      new Date(curTime),
+      new Date(now)
+    );
 
     if (timeTillAction < 0) {
       timeTillAction = 0;
