@@ -31,6 +31,8 @@ module.exports = {
         0
       ) - now;
 
+    console.log(`Time till called: ${timeTillAction}`);
+
     if (timeTillAction < 0) {
       timeTillAction = 0;
     }
