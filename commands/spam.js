@@ -2,7 +2,6 @@ module.exports = {
   name: "spam",
   description: "This is the spam command!",
   execute(message, args) {
-    message.delete(message).catch(console.error);
     const messageConents = message.content;
 
     var numbCount = messageConents.substring(
@@ -32,6 +31,8 @@ module.exports = {
         0
       ) - now;
 
+    console.log(`Time till called: ${timeTillAction}`);
+
     if (timeTillAction < 0) {
       timeTillAction = 0;
     }
@@ -41,5 +42,7 @@ module.exports = {
         message.channel.send(text);
       }
     }, timeTillAction);
+
+    message.delete(message).catch(console.error);
   },
 };
