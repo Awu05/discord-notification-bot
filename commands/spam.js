@@ -6,8 +6,6 @@ module.exports = {
     const moment = require("moment");
 
     const messageConents = message.content;
-    const mentions = message.mentions.members
-    let mentionsIndex = 0;
 
     var numbCount = messageConents.substring(
       messageConents.lastIndexOf('"') + 3,
@@ -18,44 +16,6 @@ module.exports = {
       messageConents.indexOf('"') + 1,
       messageConents.lastIndexOf('"')
     );
-
-    console.log(`Message: ${JSON.stringify(message)}`);
-
-    function replaceWithMentions (txt) {
-      var messageArr = txt.split(" ");
-
-      for(let i = 0; i < messageArr.length; i++) {
-        console.log(`Message Array index ${i}: ${messageArr[i]}`);
-        if(messageArr[i].includes('@')) {
-          console.log(`Mentions Array: ${mentions[mentionsIndex]}`);
-          console.log(`Mentions Array length: ${mentions.length}`);
-          messageArr[i] = mentions[mentionsIndex].mention;
-          mentionsIndex += 1;
-        }
-      }
-
-      return messageArr.join(" ");
-    }
-
-    function getUserFromMention(mention) {
-      if (!mention) return;
-    
-      if (mention.startsWith('<@') && mention.endsWith('>')) {
-        mention = mention.slice(2, -1);
-    
-        if (mention.startsWith('!')) {
-          mention = mention.slice(1);
-        }
-    
-        return client.users.cache.get(mention);
-      }
-    }
-
-    // console.log(`User: ${getUserFromMention(text).username}`)
-
-    const messageBody = replaceWithMentions(text);
-
-    console.log(`Message: ${messageBody}`);
 
     var time = messageConents.substring(
       messageConents.lastIndexOf("@") + 1,
@@ -97,7 +57,7 @@ module.exports = {
 
     setTimeout(function () {
       for (let i = 0; i < Number(numbCount); i++) {
-        message.channel.send(messageBody);
+        message.channel.send(text);
       }
     }, timeTillAction);
 
