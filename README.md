@@ -1,6 +1,6 @@
 # Discord Notification bot
 
-This is a simple Discord spam bot made using Nodejs.
+This is a simple Discord notification bot made using Nodejs.
 
 Requirements: NodeJS, Docker (Optional)
 
