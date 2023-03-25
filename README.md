@@ -1,4 +1,4 @@
-# Discord spam bot
+# Discord Notification bot
 
 This is a simple Discord spam bot made using Nodejs.
 
